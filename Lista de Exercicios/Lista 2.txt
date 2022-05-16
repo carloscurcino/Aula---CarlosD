@@ -1,0 +1,246 @@
+
+
+Lista 2
+
+//Ex001.2
+
+#include <stdio.h>
+#include <stdlib.h>
+
+float calcSal(float sal, float vendas){
+    float total;
+    total = (vendas*15/100)+sal;
+    return total;
+}
+
+int main(){
+
+    char nome[20];
+    printf("\nDigite seu nome!\n");
+    scanf("%s", &nome);
+
+    float salario;
+    salario = 0;
+    printf("\nQual seu salario?\n");
+    scanf("%f", &salario);
+
+    float vendas,result;
+    vendas = 0;
+    printf("\nQuanto vendeu em Rs?\n");
+    scanf("%f", &vendas);
+
+    result=calcSal(salario,vendas);
+    printf("%s seu salario e %f",nome,result);
+
+
+
+    return(0);
+}
+
+//Ex002.2
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>>
+
+int main(){
+
+    int num, c, d, u;
+    printf("\nDigite um numero inteiro de ate tres digitos!\n");
+    scanf("%i", &num);
+    printf("Seu numero e: %i\n", num);
+    c = num/100;
+    d = (num%100)/10;
+    u = num%10;
+
+    printf("Centena: %i \nDezena: %i \nUnidade: %i", c, d, u);
+
+
+    return(0);
+}
+
+//Ex003.2
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int main(){
+        int temp, h, m, s;
+        printf("\nDigite a duraçao do evento em segundos!\n");
+        scanf("%i", &temp);
+        printf("%i", temp);
+        h = temp/3600;
+        m = (temp%3600)/60;
+        s = ((temp%3600)%3600)/10;
+        printf("\n%i Horas, %i minutos e %i segundos.", h, m, s);
+
+
+
+
+
+    return(0);
+}
+
+//Ex004.2
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int main(){
+    float a, b, c, d, e, f, x, y;
+    printf("\nDigite em ordem os valores da a, b, c, d, e, f!\n");
+    scanf("%f, %f, %f, %f, %f, %f", &a, &b, &c, &d, &e,&f);
+    printf("%f %f %f %f %f %f", a, b, c, d, e, f);
+    //result = EquaLinear(a, b, c, d, e, f);
+    x = c*e-b*f/a*e-b*d;
+    y =  a*f-c*d/a*e-b*d;
+   // x.toFixed(2); Ver como colocar só duas casas decimais.
+   // y.toFixed(2);
+    printf("\nResultado: %f, %f", x, y);
+
+
+
+    return(0);
+}
+
+//Ex005.2
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int calcTotal(int p, int m, int g){
+    int vt;
+    vt=p*10+m*12+g*15;
+
+    return vt;
+}
+
+int main(){
+    int p, m, g, total;
+    printf("\nQuantas camisas P vai levar?\n");
+    scanf("%i", &p);
+    printf("\nQuantas camisas M vai levar?\n");
+    scanf("%i", &m);
+    printf("\nQuantas camisas G vai levar?\n");
+    scanf("%i", &g);
+
+    total= calcTotal(p, m, g);
+    printf("\nTotal: %i", total);
+
+
+    return(0);
+}
+
+//Ex006.2
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int main(){
+    int D, a, m, d;
+    printf("\Quantos dias estamos em acidentes?\n");
+    scanf("%i", &D); //Lembrar de colocar & sempre no scanf
+    a = D/365;
+    m =(D%365)/12;
+    d = (D%365)%12;
+    printf("Estamos a %i anos, %i meses e %i dias sem acidentes!", a, m, d);
+
+
+
+    return(0);
+}
+
+//Ex007.2
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int main(){
+    int andre, carlos;
+    float felipe, valor;
+    printf("Digite o valor da conta!\n"); //Tem como mudar o float de ponto pra virgula? pesquisar.
+    scanf("%f", &valor);
+    andre=valor/3;
+    carlos=valor/3;
+    felipe=valor-(andre+carlos);
+    printf("Andre paga: %i\nCarlos paga: %i \nE Felipe paga: %f", andre, carlos, felipe);
+
+    return(0);
+}
+
+//Ex008.2
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int main(){
+    float QS, queij, pres, hamb, kg; //deixei em float pq se a quantidade de sanduiches for pequena o resultado vai ser 0 em int
+    printf("\nQuantos sanduiches?\n");
+    scanf("%f", &QS);
+    queij = (QS*50)/1000;
+    pres = (QS*50)/1000;
+    hamb = (QS*100)/1000;
+    kg = queij+pres+hamb;
+
+    printf("Serao necessarios %f kg de queijo, %f kg de presunto e %f kg de hamburger. Sendo um total de: %f kg's", queij, pres, hamb, kg);
+
+
+
+
+    return(0);
+}
+
+/Ex009.2
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main(){
+    float ca, co, hip;
+    printf("Qual o valor do cateto adjacente?\n")/
+    scanf("%f", &ca);
+    printf("\nQual o valor do cateto oposto?\n")/
+    scanf("%f", &co);
+    hip=raiz(ca*ca+co*co);
+
+
+    return(0);
+}
+
+//Ex010.2
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int SomaImpar(int n1, int n2, int n3, int n4, int n5){
+    int soma;
+    soma = n1* (n1%2);
+    soma=soma+ n2*(n2%2);
+    soma=soma+ n3*(n3%2);
+    soma=soma+ n4*(n4%2);
+    soma=soma+ n5*(n5%2);
+
+    return soma;
+}
+
+int main(){
+    int num1, num2, num3, num4, num5;
+    int soma;
+    printf("Digite 5 numeros distintos!\n");
+    scanf("%i, %i, %i, %i, %i", &num1, &num2, &num3,&num4, &num5);
+    printf("%i, %i, %i, %i, %i", num1, num2, num3, num4, num5);
+    soma= SomaImpar(num1, num2, num3, num4, num5);
+    printf("\nO resultade e: %i", soma);
+
+
+
+    return(0);
+}
+
